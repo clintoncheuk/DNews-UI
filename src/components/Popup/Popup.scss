@@ -1,0 +1,73 @@
+@import "../../variables.scss";
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+
+  .popup-container {
+    height: auto;
+    width: 80vw;
+    max-width: 400px;
+    background-color: var(--background-color);
+    border-radius: 30px;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-animation: fadeIn 0.25s ease-in-out;
+    -moz-animation: fadeIn 0.25s ease-in-out;
+    -o-animation: fadeIn 0.25s ease-in-out;
+    animation: fadeIn 0.25s ease-in-out;
+
+    .title {
+      color: var(--primary-color);
+      font-weight: 500;
+      padding-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .message {
+      font-size: 1em;
+      text-align: justify;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: 0;
+      display: flex;
+
+      .button {
+        cursor: pointer;
+        font-weight: 700;
+        margin: 0 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}

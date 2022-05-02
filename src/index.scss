@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&family=Roboto+Mono:wght@700&display=swap");
+@import "./variables.scss";
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    max-width: 95%;
+  }
+}

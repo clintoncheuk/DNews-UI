@@ -1,0 +1,106 @@
+.navbar {
+  display: flex;
+  margin: 50px auto;
+
+  a {
+    text-decoration: none;
+    margin: auto 0;
+  }
+
+  .logo {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.7em;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: auto 0 auto auto;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 8px 13px;
+      border-radius: 25px;
+      cursor: pointer;
+      -webkit-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out;
+    }
+
+    li:hover:not(.selected) {
+      background-color: #d6d3c2;
+      opacity: 0.6;
+    }
+
+    li.selected {
+      background-color: #ffd781;
+
+      &:hover {
+        background-color: #ceab60;
+      }
+    }
+  }
+
+  .connect-wallet-btn {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    margin: auto 0 auto 50px;
+    display: flex;
+    font-size: 1em;
+
+    .icon {
+      margin: auto 8px auto auto;
+    }
+  }
+
+  .wallet-address {
+    margin: auto 0 auto 50px;
+    background-color: #fff;
+    border-radius: 10px 15px;
+    padding: 10px 15px;
+    border: var(--primary-color) 1px solid;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .incorrect-chain {
+    margin: auto 0 auto 50px;
+    background-color: #fff;
+    border-radius: 10px 15px;
+    padding: 10px 15px;
+    border: red 2px solid;
+    color: red;
+    font-weight: 700;
+    display: flex;
+    cursor: pointer;
+
+    .icon {
+      margin: auto 8px auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    margin: 20px auto;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .connect-wallet-btn {
+    margin: auto 0 auto auto !important;
+  }
+}

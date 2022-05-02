@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  Outlet,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Popup from "./components/Popup";
+import News from "./pages/News";
+import AddNews from "./pages/AddNews";
+import NewsDetail from "./pages/NewsDetail";
+import { ToastContainer } from "react-toastify";
 
-function App() {
+const App = () => {
+  const LayoutsWithNavbar = () => {
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Popup />
+        <ToastContainer />
+      </>
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LayoutsWithNavbar />}>
+          <Route exact path="/" element={<Navigate to="/news" />} />
+          <Route path="news">
+            <Route path="" element={<News />} />
+            <Route path=":id" element={<NewsDetail />} />
+            <Route path="create" element={<AddNews />} />
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

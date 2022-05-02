@@ -1,0 +1,49 @@
+.news-item {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-background-color);
+  border-radius: 25px;
+  box-shadow: 1px 1px 2px #ccc, -1px 0 2px #ccc;
+
+  .cover-image-container {
+    border-radius: 25px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .cover-image-invisible {
+      width: 100%;
+      visibility: hidden;
+    }
+  }
+
+  .text-container {
+    margin: 20px;
+
+    .title {
+      font-size: 2em;
+    }
+
+    .content {
+      margin-top: 20px;
+      color: var(--secondary-color);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .read-more-btn {
+      cursor: pointer;
+      margin-top: 25px;
+      padding: 10px 30px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 20px;
+      width: fit-content;
+    }
+  }
+}

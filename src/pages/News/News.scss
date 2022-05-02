@@ -1,0 +1,26 @@
+.news-container {
+  display: flex;
+  flex-direction: column;
+
+  .news-item {
+    margin: 20px auto;
+    flex-grow: 2;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .news-container {
+    .news-item {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .news-container {
+    .news-item {
+      width: 90%;
+    }
+  }
+}
