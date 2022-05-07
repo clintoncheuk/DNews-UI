@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { showPopup } from "../../actions/popup";
 import { MESSAGES } from "../../tools/PopupHelper";
 import { useCallback, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const { ethereum } = window;
@@ -102,42 +103,47 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a href="/news">
-        <div className="logo">DNews</div>
+      <a className="logo" href="news">
+        <div>DNews</div>
       </a>
-      <ul>
-        <a href="/news">
-          <li className={location?.pathname === "/news" ? "selected" : ""}>
-            Home
-          </li>
-        </a>
-        <a href="/news/create">
-          <li
+
+      <div className="nav-container">
+        <ul>
+          <NavLink
+            exact
+            to="news"
+            className={location?.pathname === "/news" ? "selected" : ""}
+          >
+            <li>News</li>
+          </NavLink>
+          <NavLink
+            exact
+            to="news/create"
             className={location?.pathname === "/news/create" ? "selected" : ""}
           >
-            Add News
-          </li>
-        </a>
-      </ul>
+            <li>Add News</li>
+          </NavLink>
+        </ul>
 
-      {!currentAccount && (
-        <div className="connect-wallet-btn" onClick={() => connectWallet()}>
-          <AccountBalanceWalletOutlined className="icon" /> Connect Wallet
-        </div>
-      )}
+        {!currentAccount && (
+          <div className="connect-wallet-btn" onClick={() => connectWallet()}>
+            <AccountBalanceWalletOutlined className="icon" /> Connect Wallet
+          </div>
+        )}
 
-      {currentAccount && isChainCorrect() && (
-        <MaterialTooltip title={currentAccount}>
-          <div className="wallet-address">{currentAccount}</div>
-        </MaterialTooltip>
-      )}
+        {currentAccount && isChainCorrect() && (
+          <MaterialTooltip title={currentAccount}>
+            <div className="wallet-address">{currentAccount}</div>
+          </MaterialTooltip>
+        )}
 
-      {currentAccount && !isChainCorrect() && (
-        <div className="incorrect-chain" onClick={() => switchNetwork()}>
-          <ErrorOutline className="icon" />
-          Switch Network
-        </div>
-      )}
+        {currentAccount && !isChainCorrect() && (
+          <div className="incorrect-chain" onClick={() => switchNetwork()}>
+            <ErrorOutline className="icon" />
+            Switch Network
+          </div>
+        )}
+      </div>
     </div>
   );
 };

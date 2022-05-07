@@ -1,7 +1,7 @@
 import {
   Outlet,
   Route,
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Navigate,
 } from "react-router-dom";
