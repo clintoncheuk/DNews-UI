@@ -103,21 +103,19 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a className="logo" href="news">
+      <a className="logo" href=".">
         <div>DNews</div>
       </a>
 
       <div className="nav-container">
         <ul>
           <NavLink
-            exact
             to="news"
             className={location?.pathname === "/news" ? "selected" : ""}
           >
             <li>News</li>
           </NavLink>
           <NavLink
-            exact
             to="news/create"
             className={location?.pathname === "/news/create" ? "selected" : ""}
           >

@@ -31,7 +31,7 @@ const NewsItem = ({ article }) => {
           {article.cover_image && (
             <div className="cover-image-container" style={coverImageStyle}>
               {loadingImage && (
-                <div class="loading-cover-image">
+                <div className="loading-cover-image">
                   <Skeleton height={300} borderRadius={25} />
                 </div>
               )}
@@ -58,7 +58,7 @@ const NewsItem = ({ article }) => {
       {!article && (
         <div className="news-item">
           <div className="cover-image-container">
-            <div class="loading-cover-image">
+            <div className="loading-cover-image">
               <Skeleton height={300} borderRadius={25} />
             </div>
           </div>
