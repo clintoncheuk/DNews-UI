@@ -18,7 +18,15 @@ const AddNews = () => {
   const [inputs, setInputs] = useState({});
   const [arAddress, setArAddress] = useState("");
   const [arBalance, setArBalance] = useState(-1);
-  const [arweave] = useState(Arweave.init({}));
+  const [arweave] = useState(
+    Arweave.init({
+      host: process.env.REACT_APP_ARWEAVE_HOST,
+      port: 443,
+      protocol: "https",
+      timeout: 20000,
+      logging: false,
+    })
+  );
   const [isUploading, setIsUploading] = useState(false);
   const [progressMessage, setProgressMessage] = useState("");
   const [uploadError, setUploadError] = useState("");
